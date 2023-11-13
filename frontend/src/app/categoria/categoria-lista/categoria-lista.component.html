@@ -1,0 +1,80 @@
+<p-toast key="bc"></p-toast>
+<p-confirmDialog acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
+
+<div class="containerCard">
+  <p-card [style]="{ width: '100%', margin: '60px auto' }">
+    <ng-template pTemplate="header">
+      <div
+        class="headerCard flex bg-gray-300 align-items-center justify-content-around border-round p-2"
+      >
+        <h2 class="tituloCard">{{ title }}</h2>
+        <button
+          pButton
+          pRipple
+          label="Novo"
+          class="p-button-success"
+          routerLink="/categorias/novo"
+        ></button>
+      </div>
+    </ng-template>
+
+    <div
+      class="contentCard flex bg-gray-300 align-items-center justify-content-between border-round"
+    >
+      <div>
+        <p-table
+          [value]="categorias"
+          responsiveLayout="stack"
+          dataKey="id"
+          [lazy]="true"
+          (onLazyLoad)="loadCustomers($event)"
+          [paginator]="true"
+          [rows]="16"
+          [totalRecords]="totaldeRegistros"
+          [loading]="loading"
+          [showCurrentPageReport]="true"
+          [rowsPerPageOptions]="[8, 16, 32]"
+          currentPageReportTemplate="Registros {first} de {last} - Total {totalRecords} registros"
+          [globalFilterFields]="['id', 'descricao']"
+        >
+          <ng-template pTemplate="header" let-columns>
+            <tr>
+              <th>#</th>
+              <th>Descrição</th>
+              <th>Ações</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-categoria let-columns="columns">
+            <tr>
+              <td><span class="p-column-title">#</span>{{ categoria.id }}</td>
+              <td>
+                <span class="p-column-title">Descrição</span
+                >{{ categoria.descricao }}
+              </td>
+              <td class="md:flex md:gap-3">
+                <button
+                  pButton
+                  icon="pi pi-fw pi-pencil"
+                  [routerLink]="['/categorias', categoria.id]"
+                ></button>
+                <button
+                  class="p-button-danger"
+                  pButton
+                  icon="pi pi-fw pi-trash"
+                  (click)="onDelete(categoria.id)"
+                ></button>
+              </td>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="7">Nenhum categoria criado.</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-card>
+</div>

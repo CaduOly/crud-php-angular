@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "nome": "Smartphone",
+    "categoria_id": 1,
+    "valor": 799.99,
+    "vencimento": "2023-12-31",
+    "quantidade_estoque": 50,
+    "perecivel": false
+  },
+  {
+    "id": 2,
+    "nome": "Camiseta",
+    "categoria_id": 2,
+    "valor": 29.99,
+    "vencimento": null,
+    "quantidade_estoque": 100,
+    "perecivel": false
+  },
+  {
+    "id": 3,
+    "nome": "Arroz",
+    "categoria_id": 3,
+    "valor": 5.99,
+    "vencimento": "2024-06-30",
+    "quantidade_estoque": 200,
+    "perecivel": false
+  },
+  {
+    "id": 4,
+    "nome": "Harry Potter e a Pedra Filosofal",
+    "categoria_id": 4,
+    "valor": 39.99,
+    "vencimento": null,
+    "quantidade_estoque": 30,
+    "perecivel": false
+  }
+]

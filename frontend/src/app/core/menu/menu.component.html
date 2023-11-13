@@ -1,0 +1,17 @@
+<div class="containerMenu">
+  <div class="contentMenu">
+    <a class="btMenu flex" (click)="exibirSide = !exibirSide">
+        <i class="iconMenu" [ngClass]="!exibirSide ? 'pi pi-fw pi-bars' : 'pi pi-fw pi-times'" style="right: 0"></i>
+    </a>
+    <div class="containerImgMenu">
+        <img src="../../../assets/img/uiLogo.png" alt="uiLogo" routerLink="/" width="100%">
+    </div>
+  </div>
+</div>
+
+<div #menu [hidden]="!exibirSide" class="containerPanelMenu">
+
+<p-panelMenu [model]="itemMenu"></p-panelMenu>
+
+
+</div>

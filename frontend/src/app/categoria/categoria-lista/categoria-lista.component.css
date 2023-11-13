@@ -1,0 +1,11 @@
+.containerCard{
+    width: 100vw;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloCard{
+    color: #322d63;;
+}

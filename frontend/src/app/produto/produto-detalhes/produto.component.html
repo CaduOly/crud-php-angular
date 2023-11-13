@@ -1,0 +1,173 @@
+<p-toast key="bc"></p-toast>
+<p-confirmDialog acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
+
+<div class="containerCard">
+  <p-card
+    [style]="{ width: '58rem', margin: '60px auto' }"
+    [styleClass]="loading ? '' : 'hidden'"
+  >
+    <ng-template pTemplate="header">
+      <div
+        class="headerCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+      >
+        <a class="tituloCard" routerLink="/produtos"
+          ><i class="pi pi-angle-left"></i
+        ></a>
+        <h2 class="tituloCard">{{ title }}</h2>
+        <a class="tituloCard" routerLink="/produtos"
+          ><i class="pi pi-times"> </i
+        ></a>
+      </div>
+    </ng-template>
+    <div
+      class="contentCard grid p-fluid align-items-center justify-content-between border-round p-2"
+    >
+      <div class="col-12">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+      <div class="col-12 md:col-8">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+      <div class="col-12 md:col-4">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+      <div class="col-12 md:col-4">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+      <div class="col-12 md:col-4">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+      <div class="col-12 md:col-4">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card
+    [style]="{ width: '100%', margin: '60px auto' }"
+    [styleClass]="loading ? 'hidden' : ''"
+  >
+    <ng-template pTemplate="header">
+      <div
+        class="headerCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+      >
+        <a class="tituloCard" routerLink="/produtos"
+          ><i class="pi pi-angle-left"></i
+        ></a>
+        <h2 class="tituloCard">{{ title }}</h2>
+        <a class="tituloCard" routerLink="/produtos"
+          ><i class="pi pi-times"> </i
+        ></a>
+      </div>
+    </ng-template>
+
+    <div
+      class="contentCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+    >
+      <form autocomplete="off" #f="ngForm" (ngSubmit)="salvar()">
+        <div class="grid p-fluid">
+          <div class="col-12">
+            <label for="nome">Nome do Produto</label>
+            <input
+              pInputText
+              name="nome_produto"
+              required
+              [(ngModel)]="produto.nome"
+              #nome="ngModel"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  f.submitted && nome.invalid && (nome.dirty || nome.touched)
+              }"
+            />
+          </div>
+
+          <div class="col-12 md:col-8">
+            <label for="categoria"> Categoria </label>
+            <p-dropdown
+              [options]="categorias"
+              [(ngModel)]="produto.categoria_id"
+              name="categoria_id"
+              optionValue="id"
+              optionLabel="descricao"
+              [filter]="true"
+              filterBy="descricao"
+              placeholder="Selecione a Categoria"
+            >
+            </p-dropdown>
+          </div>
+
+          <div class="col-12 md:col-4">
+            <label for="dt_vencimento">Vencimento</label>
+            <input
+              pInputText
+              name="vencimento"
+              type="date"
+              required
+              [(ngModel)]="produto.vencimento"
+              #vencimento="ngModel"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  f.submitted &&
+                  vencimento.invalid &&
+                  (vencimento.dirty || vencimento.touched)
+              }"
+            />
+          </div>
+
+          <div class="col-12 md:col-4">
+            <label for="qtd_estoque">Quantidade em estoque</label>
+            <input
+              pInputText
+              name="qtd_estoque"
+              required
+              [(ngModel)]="produto.quantidade_estoque"
+              #qtd_estoque="ngModel"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  f.submitted &&
+                  qtd_estoque.invalid &&
+                  (qtd_estoque.dirty || qtd_estoque.touched)
+              }"
+            />
+          </div>
+
+          <div class="col-12 md:col-4">
+            <label for="valor_produto">Valor do produto R$</label>
+            <input
+              class="text-right"
+              pInputText
+              name="valor_produto"
+              type="number"
+              required
+              [(ngModel)]="produto.valor"
+              #valor_produto="ngModel"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  f.submitted &&
+                  valor_produto.invalid &&
+                  (valor_produto.dirty || valor_produto.touched)
+              }"
+            />
+          </div>
+          
+          <div class="col-12 md:col-3 md:flex md:align-items-center md:mt-2">
+            <div class="flex align-items-center">
+              <label for="perecivel" class="mr-1">Produto perecível?</label>
+              <p-checkbox
+                name="perecivel"
+                [(ngModel)]="produto.perecivel"
+                [binary]="true"
+                inputId="perecivel"
+              ></p-checkbox>
+            </div>
+          </div>
+        </div>
+        <div class="footerCard col-12 md:flex md:justify-content-end">
+          <button class="buttonSave" type="submit">
+            <i class="pi pi-save"></i> Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</div>

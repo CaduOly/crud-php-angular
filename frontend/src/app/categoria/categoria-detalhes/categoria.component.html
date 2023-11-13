@@ -1,0 +1,79 @@
+<p-toast key="bc"></p-toast>
+<p-confirmDialog acceptLabel="Sim" rejectLabel="Não"></p-confirmDialog>
+
+<div class="containerCard">
+  <p-card
+    [style]="{ width: '58rem', margin: '60px auto' }"
+    [styleClass]="loading ? '' : 'hidden'"
+  >
+    <ng-template pTemplate="header">
+      <div
+        class="headerCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+      >
+        <a class="tituloCardCategory" routerLink="/categorias"
+          ><i class="pi pi-angle-left"></i
+        ></a>
+        <h2 class="tituloCardCategory">{{ title }}</h2>
+        <a class="tituloCardCategory" routerLink="/categorias"
+          ><i class="pi pi-times"> </i
+        ></a>
+      </div>
+    </ng-template>
+    <div
+      class="contentCard grid p-fluid align-items-center justify-content-between border-round p-2"
+    >
+      <div class="col-12">
+        <p-skeleton styleClass="mb-2" width="100%" height="2rem"></p-skeleton>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card
+    [style]="{ width: '100%', margin: '60px auto' }"
+    [styleClass]="loading ? 'hidden' : ''"
+  >
+    <ng-template pTemplate="header">
+      <div
+        class="headerCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+      >
+        <a class="tituloCard" routerLink="/categorias"
+          ><i class="pi pi-angle-left"></i
+        ></a>
+        <h2 class="tituloCard">{{ title }}</h2>
+        <a class="tituloCard" routerLink="/categorias"
+          ><i class="pi pi-times"> </i
+        ></a>
+      </div>
+    </ng-template>
+
+    <div
+      class="contentCard flex bg-gray-300 align-items-center justify-content-between border-round p-2"
+    >
+      <form autocomplete="off" #f="ngForm" (ngSubmit)="salvar()">
+        <div class="grid p-fluid">
+          <div class="col-12">
+            <label for="descricao">Descricao da Categoria</label>
+            <input
+              pInputText
+              name="descricao_categoria"
+              required
+              [(ngModel)]="categoria.descricao"
+              #descricao="ngModel"
+              [ngClass]="{
+                'ng-invalid ng-dirty':
+                  f.submitted &&
+                  descricao.invalid &&
+                  (descricao.dirty || descricao.touched)
+              }"
+            />
+          </div>
+        </div>
+        <div class="footerCard col-12 md:flex md:justify-content-end">
+          <button class="buttonSave" type="submit">
+            <i class="pi pi-save"></i> Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</div>

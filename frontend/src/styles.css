@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #d2d0e1;
+}
+
+/* Estilos PanelMenu */
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  transition: box-shadow 0.2s;
+}
+
+.p-panelmenu .p-panelmenu-header .p-panelmenu-header-content .p-panelmenu-header-action {
+  color: #efefef;
+}
+
+
+
+.p-panelmenu .p-panelmenu-content {
+  border: none;
+  background: #181530;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem > .p-menuitem-content .p-menuitem-link .p-menuitem-text {
+  color: #c0c0c0;
+}
+
+.p-panelmenu .p-panelmenu-content .p-menuitem:not(.p-highlight):not(.p-disabled) > .p-menuitem-content:hover{
+  background-color:#584faf;
+}
+
+/* Pcard */
+.p-card {
+  background: #ffffff;
+  color: #495057;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  padding: 0.25rem;
+}
+
+/* P-button */
+.p-dialog .p-dialog-footer *{
+margin: 0 8.75px 0 0;
+}

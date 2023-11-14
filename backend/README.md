@@ -14,51 +14,6 @@ Antes de começar, certifique-se de que você possui o seguinte instalado:
 
 Após garantir que esses requisitos estão atendidos, você estará pronto para iniciar a aplicação.
 
-## Estrutura do Projeto
-
-O projeto segue a estrutura de diretórios criada pelo Laravel:
-
-```plaintext
-backend/
-|-- app/
-|   |-- Console/
-|   |-- Exceptions/
-|   |-- Http/
-|   |   |-- Controllers/
-|   |   |-- Middleware/
-|   |-- Models/
-|-- bootstrap/
-|-- config/
-|-- database/
-|   |-- factories/
-|   |-- migrations/
-|   |-- seeders/
-|-- public/
-|-- resources/
-|   |-- css/
-|   |-- js/
-|   |-- lang/
-|   |-- views/
-|-- routes/
-|-- storage/
-|   |-- app/
-|   |-- framework/
-|   |-- logs/
-|   |-- ...
-|-- tests/
-|-- vendor/
-|-- .env
-|-- .env.example
-|-- artisan
-|-- composer.json
-|-- composer.lock
-|-- phpunit.xml
-|-- server.php
-|-- webpack.mix.js
-|-- ...
-
-```
-
 ### Inicialização do Projeto
 
 Para iniciar o projeto e executar a aplicação, siga os passos abaixo:
@@ -115,6 +70,53 @@ Assim, as tabelas no banco de dados serão criadas juntamente com 4 objetos de e
    Acesse a aplicação em seu navegador usando o endereço [http://localhost:8000](http://localhost:8000).
 
 Agora, o projeto está configurado e em execução. Sinta-se à vontade para explorar a API para gerenciamento de produtos. 
+
+## Estrutura do Projeto
+
+O projeto segue a estrutura de diretórios criada pelo Laravel:
+
+```plaintext
+backend/
+|-- app/
+|   |-- Console/
+|   |-- Exceptions/
+|   |-- Http/
+|   |   |-- Controllers/
+|   |   |-- Middleware/
+|   |-- Models/
+|-- bootstrap/
+|-- config/
+|-- database/
+|   |-- factories/
+|   |-- migrations/
+|   |-- seeders/
+|-- public/
+|-- resources/
+|   |-- css/
+|   |-- js/
+|   |-- lang/
+|   |-- views/
+|-- routes/
+|-- storage/
+|   |-- app/
+|   |-- framework/
+|   |-- logs/
+|   |-- ...
+|-- tests/
+|-- vendor/
+|-- .env
+|-- .env.example
+|-- artisan
+|-- composer.json
+|-- composer.lock
+|-- phpunit.xml
+|-- server.php
+|-- webpack.mix.js
+|-- ...
+
+```
+
+
 
 **Observação:** Certifique-se de que as portas necessárias estejam disponíveis em sua máquina, e nenhum outro serviço esteja utilizando essas portas antes de iniciar o Docker Compose.
 

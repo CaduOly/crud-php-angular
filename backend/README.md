@@ -1,4 +1,4 @@
-# api-teste-uitec
+# api-crud-php-angular
 
 Este projeto php e Laravel oferece uma API para o gerenciamento de produtos. O projeto contém um Docker Compose na pasta `db` que permite executar o banco de dados para conectar-se ao back-end, proporcionando um ambiente pronto para uso.
 

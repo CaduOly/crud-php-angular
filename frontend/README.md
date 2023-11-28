@@ -1,4 +1,4 @@
-# App-teste-uitec
+# App-crud-php-angular
 
 Este é um projeto Front-end em Angular que implementa uma API para gerenciamento de projeto.
 

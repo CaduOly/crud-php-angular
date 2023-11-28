@@ -1,4 +1,4 @@
-# teste-uitec
+# CRUD PHP+ANGULAR
 
 Este é um projeto Full stack que implementa uma API para gerenciamento de produtos. O projeto é composto por três pastas.
 
